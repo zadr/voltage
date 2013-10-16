@@ -1,0 +1,769 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		89034DA11078755B00A78FB9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89034DA01078755B00A78FB9 /* Security.framework */; };
+		8914CE5E127DEC54000BF0D7 /* add.tif in Resources */ = {isa = PBXBuildFile; fileRef = 8914CE5B127DEC54000BF0D7 /* add.tif */; };
+		8914CE5F127DEC54000BF0D7 /* pause.tif in Resources */ = {isa = PBXBuildFile; fileRef = 8914CE5C127DEC54000BF0D7 /* pause.tif */; };
+		8914CE60127DEC54000BF0D7 /* remove.tif in Resources */ = {isa = PBXBuildFile; fileRef = 8914CE5D127DEC54000BF0D7 /* remove.tif */; };
+		892475981089337100B1BA01 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 8924736310891C2200B1BA01 /* Growl Registration Ticket.growlRegDict */; };
+		8931D12B10EF606000ABA25A /* BPDevicePowerSources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931D12A10EF606000ABA25A /* BPDevicePowerSources.m */; };
+		893EEF3910706AD900666A37 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893EEF3810706AD900666A37 /* IOKit.framework */; };
+		893EEF7010706CE500666A37 /* net.thisismyinter.voltage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 893EEF6F10706CE500666A37 /* net.thisismyinter.voltage.plist */; };
+		894457B0120A9896005801B0 /* NSObjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 894457AF120A9896005801B0 /* NSObjectAdditions.m */; };
+		8945697B10D0E4E300CB8D59 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8945697910D0E4E200CB8D59 /* Preferences.xib */; };
+		894FB59310A407C600E2F34C /* BPAlertGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 894FB59210A407C600E2F34C /* BPAlertGenerator.m */; };
+		8957E2D41088351500F21648 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8957E2D31088351500F21648 /* Growl.framework */; };
+		8957E31C1088357D00F21648 /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8957E2D31088351500F21648 /* Growl.framework */; };
+		8982C94D127D05EB003C1E6A /* BPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8982C94C127D05EB003C1E6A /* BPCell.m */; };
+		89845E2A10E9AA48002A3055 /* BPStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89845E2910E9AA48002A3055 /* BPStatusBarController.m */; };
+		8997FC201099126100C2FCAB /* BPAlertCreationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC1B1099126100C2FCAB /* BPAlertCreationWindowController.m */; };
+		8997FC211099126100C2FCAB /* BPAlertsRulesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC1D1099126100C2FCAB /* BPAlertsRulesWindowController.m */; };
+		8997FC221099126100C2FCAB /* BPRulesCriterionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC1F1099126100C2FCAB /* BPRulesCriterionWindowController.m */; };
+		8997FC2D1099127D00C2FCAB /* BPAlertRulesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC2A1099127D00C2FCAB /* BPAlertRulesController.m */; };
+		8997FC311099128600C2FCAB /* BPApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC301099128600C2FCAB /* BPApplicationDelegate.m */; };
+		8997FC371099129400C2FCAB /* BPTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC351099129400C2FCAB /* BPTimeIntervalFormatter.m */; };
+		8997FC3E109912A300C2FCAB /* BPAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC39109912A300C2FCAB /* BPAlert.m */; };
+		8997FC3F109912A300C2FCAB /* BPRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC3B109912A300C2FCAB /* BPRule.m */; };
+		8997FC43109912AD00C2FCAB /* BPPowerSourceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC42109912AD00C2FCAB /* BPPowerSourceInformation.m */; };
+		89C5561510F48B1F0052ED99 /* BPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C5561410F48B1F0052ED99 /* BPConstants.m */; };
+		89E1165010F077F200CC112C /* BPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E1164F10F077F200CC112C /* BPModel.m */; };
+		89E1D0C510AD114D00BA8C4A /* alerts.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E1D0C310AD114D00BA8C4A /* alerts.xib */; };
+		89E1D15E10AE559400BA8C4A /* NSFileManagerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E1D15D10AE559400BA8C4A /* NSFileManagerAdditions.m */; };
+		89E4DA8E10F7EA8100091C5B /* BPGraphLoggingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E4DA8D10F7EA8100091C5B /* BPGraphLoggingController.m */; };
+		89E4DB7910F7FA2E00091C5B /* singleRule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89E4DB7710F7FA2E00091C5B /* singleRule.xib */; };
+		89F90947120E32350020D9D7 /* ManageAlertsAndRules.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89F90945120E32350020D9D7 /* ManageAlertsAndRules.xib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		9234019011D5CCA800C8C30B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9234018F11D5CCA800C8C30B /* SystemConfiguration.framework */; };
+		923401A811D5CD4500C8C30B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923401A711D5CD4500C8C30B /* AddressBook.framework */; };
+		9234128E11DAE66D00C8C30B /* BPMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9234128D11DAE66D00C8C30B /* BPMenu.m */; };
+		92808DBB1103BE5300BD61DE /* BPStatusItemStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92808DBA1103BE5300BD61DE /* BPStatusItemStyle.m */; };
+		92808DF11103CF6200BD61DE /* BPStatusItemStylesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92808DF01103CF6200BD61DE /* BPStatusItemStylesManager.m */; };
+		929557C611F6DBF000FAB8E4 /* BPAudioMetadataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 929557C511F6DBF000FAB8E4 /* BPAudioMetadataReader.m */; };
+		9295587C11F710CA00FAB8E4 /* NSCellAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9295587B11F710CA00FAB8E4 /* NSCellAdditions.m */; };
+		92A188CD11F69EF200396469 /* NSViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A188CC11F69EF200396469 /* NSViewAdditions.m */; };
+		92BFDE3211E46DA400DA15E9 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BFDE3111E46DA400DA15E9 /* NSStringAdditions.m */; };
+		92BFDE8611E4718900DA15E9 /* NSMenuItemAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BFDE8511E4718900DA15E9 /* NSMenuItemAdditions.m */; };
+		92E74C7C11F16028000F3686 /* NSArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E74C7B11F16028000F3686 /* NSArrayAdditions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8957E32A1088359400F21648 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8957E31C1088357D00F21648 /* Growl.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = Resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainMenu.xib; path = Resources/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* Voltage_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voltage_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Other/main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		89034DA01078755B00A78FB9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		8914CE5B127DEC54000BF0D7 /* add.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = add.tif; path = Resources/add.tif; sourceTree = "<group>"; };
+		8914CE5C127DEC54000BF0D7 /* pause.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = pause.tif; path = Resources/pause.tif; sourceTree = "<group>"; };
+		8914CE5D127DEC54000BF0D7 /* remove.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = remove.tif; path = Resources/remove.tif; sourceTree = "<group>"; };
+		8924736310891C2200B1BA01 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Growl Registration Ticket.growlRegDict"; path = "Resources/Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		892473EC1089294900B1BA01 /* Voltage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Voltage-Info.plist"; sourceTree = "<group>"; };
+		8931D12910EF606000ABA25A /* BPDevicePowerSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPDevicePowerSources.h; path = Other/Internal/BPDevicePowerSources.h; sourceTree = "<group>"; };
+		8931D12A10EF606000ABA25A /* BPDevicePowerSources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPDevicePowerSources.m; path = Other/Internal/BPDevicePowerSources.m; sourceTree = "<group>"; };
+		893EEF3810706AD900666A37 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		893EEF6F10706CE500666A37 /* net.thisismyinter.voltage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = net.thisismyinter.voltage.plist; path = Resources/net.thisismyinter.voltage.plist; sourceTree = "<group>"; };
+		893EF0CF1070701900666A37 /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TODO.txt; path = Resources/TODO.txt; sourceTree = "<group>"; };
+		894457AE120A9896005801B0 /* NSObjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSObjectAdditions.h; path = Additions/NSObjectAdditions.h; sourceTree = "<group>"; };
+		894457AF120A9896005801B0 /* NSObjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSObjectAdditions.m; path = Additions/NSObjectAdditions.m; sourceTree = "<group>"; };
+		8945697A10D0E4E200CB8D59 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/Preferences.xib; sourceTree = "<group>"; };
+		894FB59110A407C600E2F34C /* BPAlertGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPAlertGenerator.h; path = Other/BPAlertGenerator.h; sourceTree = "<group>"; };
+		894FB59210A407C600E2F34C /* BPAlertGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPAlertGenerator.m; path = Other/BPAlertGenerator.m; sourceTree = "<group>"; };
+		8957E2D31088351500F21648 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
+		89748C69109131E800BA2B1C /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		8982C94B127D05EB003C1E6A /* BPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPCell.h; path = Views/BPCell.h; sourceTree = "<group>"; };
+		8982C94C127D05EB003C1E6A /* BPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPCell.m; path = Views/BPCell.m; sourceTree = "<group>"; };
+		89845E2810E9AA48002A3055 /* BPStatusBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPStatusBarController.h; path = "Controllers/View Controllers/Status Bar/BPStatusBarController.h"; sourceTree = "<group>"; };
+		89845E2910E9AA48002A3055 /* BPStatusBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPStatusBarController.m; path = "Controllers/View Controllers/Status Bar/BPStatusBarController.m"; sourceTree = "<group>"; };
+		8997FC1A1099126100C2FCAB /* BPAlertCreationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPAlertCreationWindowController.h; path = "Controllers/View Controllers/Rules and Alerts View Controllers/BPAlertCreationWindowController.h"; sourceTree = "<group>"; };
+		8997FC1B1099126100C2FCAB /* BPAlertCreationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPAlertCreationWindowController.m; path = "Controllers/View Controllers/Rules and Alerts View Controllers/BPAlertCreationWindowController.m"; sourceTree = "<group>"; };
+		8997FC1C1099126100C2FCAB /* BPAlertsRulesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPAlertsRulesWindowController.h; path = "Controllers/View Controllers/Rules and Alerts View Controllers/BPAlertsRulesWindowController.h"; sourceTree = "<group>"; };
+		8997FC1D1099126100C2FCAB /* BPAlertsRulesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPAlertsRulesWindowController.m; path = "Controllers/View Controllers/Rules and Alerts View Controllers/BPAlertsRulesWindowController.m"; sourceTree = "<group>"; };
+		8997FC1E1099126100C2FCAB /* BPRulesCriterionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPRulesCriterionWindowController.h; path = "Controllers/View Controllers/Rules and Alerts View Controllers/BPRulesCriterionWindowController.h"; sourceTree = "<group>"; };
+		8997FC1F1099126100C2FCAB /* BPRulesCriterionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPRulesCriterionWindowController.m; path = "Controllers/View Controllers/Rules and Alerts View Controllers/BPRulesCriterionWindowController.m"; sourceTree = "<group>"; };
+		8997FC291099127D00C2FCAB /* BPAlertRulesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPAlertRulesController.h; path = Controllers/BPAlertRulesController.h; sourceTree = "<group>"; };
+		8997FC2A1099127D00C2FCAB /* BPAlertRulesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPAlertRulesController.m; path = Controllers/BPAlertRulesController.m; sourceTree = "<group>"; };
+		8997FC2F1099128600C2FCAB /* BPApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPApplicationDelegate.h; path = Controllers/BPApplicationDelegate.h; sourceTree = "<group>"; };
+		8997FC301099128600C2FCAB /* BPApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPApplicationDelegate.m; path = Controllers/BPApplicationDelegate.m; sourceTree = "<group>"; };
+		8997FC341099129400C2FCAB /* BPTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPTimeIntervalFormatter.h; path = Other/BPTimeIntervalFormatter.h; sourceTree = "<group>"; };
+		8997FC351099129400C2FCAB /* BPTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPTimeIntervalFormatter.m; path = Other/BPTimeIntervalFormatter.m; sourceTree = "<group>"; };
+		8997FC38109912A300C2FCAB /* BPAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPAlert.h; path = Models/Core/BPAlert.h; sourceTree = "<group>"; };
+		8997FC39109912A300C2FCAB /* BPAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPAlert.m; path = Models/Core/BPAlert.m; sourceTree = "<group>"; };
+		8997FC3A109912A300C2FCAB /* BPRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPRule.h; path = Models/Core/BPRule.h; sourceTree = "<group>"; };
+		8997FC3B109912A300C2FCAB /* BPRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPRule.m; path = Models/Core/BPRule.m; sourceTree = "<group>"; };
+		8997FC41109912AD00C2FCAB /* BPPowerSourceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPPowerSourceInformation.h; path = Other/BPPowerSourceInformation.h; sourceTree = "<group>"; };
+		8997FC42109912AD00C2FCAB /* BPPowerSourceInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPPowerSourceInformation.m; path = Other/BPPowerSourceInformation.m; sourceTree = "<group>"; };
+		89C5561310F48B1F0052ED99 /* BPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPConstants.h; path = Other/Internal/BPConstants.h; sourceTree = "<group>"; };
+		89C5561410F48B1F0052ED99 /* BPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPConstants.m; path = Other/Internal/BPConstants.m; sourceTree = "<group>"; };
+		89E1164E10F077F200CC112C /* BPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPModel.h; path = Models/Core/BPModel.h; sourceTree = "<group>"; };
+		89E1164F10F077F200CC112C /* BPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPModel.m; path = Models/Core/BPModel.m; sourceTree = "<group>"; };
+		89E1D0C410AD114D00BA8C4A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/alerts.xib; sourceTree = "<group>"; };
+		89E1D15C10AE559400BA8C4A /* NSFileManagerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSFileManagerAdditions.h; path = Additions/NSFileManagerAdditions.h; sourceTree = "<group>"; };
+		89E1D15D10AE559400BA8C4A /* NSFileManagerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSFileManagerAdditions.m; path = Additions/NSFileManagerAdditions.m; sourceTree = "<group>"; };
+		89E4DA8C10F7EA8100091C5B /* BPGraphLoggingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPGraphLoggingController.h; path = Controllers/Logging/BPGraphLoggingController.h; sourceTree = "<group>"; };
+		89E4DA8D10F7EA8100091C5B /* BPGraphLoggingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPGraphLoggingController.m; path = Controllers/Logging/BPGraphLoggingController.m; sourceTree = "<group>"; };
+		89E4DB7810F7FA2E00091C5B /* singleRule.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = singleRule.xib; path = Resources/English.lproj/singleRule.xib; sourceTree = "<group>"; };
+		89F90946120E32350020D9D7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/ManageAlertsAndRules.xib; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Voltage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voltage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9234018F11D5CCA800C8C30B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		923401A711D5CD4500C8C30B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		9234128C11DAE66D00C8C30B /* BPMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPMenu.h; path = Additions/BPMenu.h; sourceTree = "<group>"; };
+		9234128D11DAE66D00C8C30B /* BPMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPMenu.m; path = Additions/BPMenu.m; sourceTree = "<group>"; };
+		92808DB91103BE5300BD61DE /* BPStatusItemStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPStatusItemStyle.h; path = Models/Styles/BPStatusItemStyle.h; sourceTree = "<group>"; };
+		92808DBA1103BE5300BD61DE /* BPStatusItemStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPStatusItemStyle.m; path = Models/Styles/BPStatusItemStyle.m; sourceTree = "<group>"; };
+		92808DEF1103CF6200BD61DE /* BPStatusItemStylesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPStatusItemStylesManager.h; path = Managers/BPStatusItemStylesManager.h; sourceTree = "<group>"; };
+		92808DF01103CF6200BD61DE /* BPStatusItemStylesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPStatusItemStylesManager.m; path = Managers/BPStatusItemStylesManager.m; sourceTree = "<group>"; };
+		929557C411F6DBF000FAB8E4 /* BPAudioMetadataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPAudioMetadataReader.h; path = Other/BPAudioMetadataReader.h; sourceTree = "<group>"; };
+		929557C511F6DBF000FAB8E4 /* BPAudioMetadataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPAudioMetadataReader.m; path = Other/BPAudioMetadataReader.m; sourceTree = "<group>"; };
+		9295587A11F710CA00FAB8E4 /* NSCellAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSCellAdditions.h; path = Additions/NSCellAdditions.h; sourceTree = "<group>"; };
+		9295587B11F710CA00FAB8E4 /* NSCellAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSCellAdditions.m; path = Additions/NSCellAdditions.m; sourceTree = "<group>"; };
+		92A188CB11F69EF200396469 /* NSViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSViewAdditions.h; path = Additions/NSViewAdditions.h; sourceTree = "<group>"; };
+		92A188CC11F69EF200396469 /* NSViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSViewAdditions.m; path = Additions/NSViewAdditions.m; sourceTree = "<group>"; };
+		92BFDE3011E46DA400DA15E9 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringAdditions.h; path = Additions/NSStringAdditions.h; sourceTree = "<group>"; };
+		92BFDE3111E46DA400DA15E9 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringAdditions.m; path = Additions/NSStringAdditions.m; sourceTree = "<group>"; };
+		92BFDE8411E4718900DA15E9 /* NSMenuItemAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSMenuItemAdditions.h; path = Additions/NSMenuItemAdditions.h; sourceTree = "<group>"; };
+		92BFDE8511E4718900DA15E9 /* NSMenuItemAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSMenuItemAdditions.m; path = Additions/NSMenuItemAdditions.m; sourceTree = "<group>"; };
+		92E74C7911F16006000F3686 /* NSArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayAdditions.h; path = Additions/NSArrayAdditions.h; sourceTree = "<group>"; };
+		92E74C7B11F16028000F3686 /* NSArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayAdditions.m; path = Additions/NSArrayAdditions.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				893EEF3910706AD900666A37 /* IOKit.framework in Frameworks */,
+				89034DA11078755B00A78FB9 /* Security.framework in Frameworks */,
+				8957E2D41088351500F21648 /* Growl.framework in Frameworks */,
+				9234019011D5CCA800C8C30B /* SystemConfiguration.framework in Frameworks */,
+				923401A811D5CD4500C8C30B /* AddressBook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				899175EE10817C7500E02DEA /* Controllers */,
+				89D89BD4107D414B00316046 /* Additions */,
+				89680E18108979C0001C507B /* Models */,
+				8982C94A127D05C0003C1E6A /* Views */,
+				29B97315FDCFA39411CA2CEA /* Other */,
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Voltage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Voltage */ = {
+			isa = PBXGroup;
+			children = (
+				893EF0CF1070701900666A37 /* TODO.txt */,
+				080E96DDFE201D6D7F000001 /* Code */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				89748C69109131E800BA2B1C /* License.txt */,
+			);
+			name = Voltage;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				256AC3F00F4B6AF500CF3369 /* Voltage_Prefix.pch */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8914CE5A127DEC44000BF0D7 /* Images */,
+				92298A9B11F54A8200607820 /* plists */,
+				89C4B0771093F15500D509D9 /* XIBs */,
+				8924736310891C2200B1BA01 /* Growl Registration Ticket.growlRegDict */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				923401A711D5CD4500C8C30B /* AddressBook.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				8957E2D31088351500F21648 /* Growl.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				893EEF3810706AD900666A37 /* IOKit.framework */,
+				89034DA01078755B00A78FB9 /* Security.framework */,
+				9234018F11D5CCA800C8C30B /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8914CE5A127DEC44000BF0D7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8914CE5B127DEC54000BF0D7 /* add.tif */,
+				8914CE5C127DEC54000BF0D7 /* pause.tif */,
+				8914CE5D127DEC54000BF0D7 /* remove.tif */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		8931D12810EF604900ABA25A /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				894FB59210A407C600E2F34C /* BPAlertGenerator.m */,
+				894FB59110A407C600E2F34C /* BPAlertGenerator.h */,
+				89C5561410F48B1F0052ED99 /* BPConstants.m */,
+				89C5561310F48B1F0052ED99 /* BPConstants.h */,
+				8931D12A10EF606000ABA25A /* BPDevicePowerSources.m */,
+				8931D12910EF606000ABA25A /* BPDevicePowerSources.h */,
+				8997FC42109912AD00C2FCAB /* BPPowerSourceInformation.m */,
+				8997FC41109912AD00C2FCAB /* BPPowerSourceInformation.h */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		89680E18108979C0001C507B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92808DC91103C34500BD61DE /* Core */,
+				8931D12810EF604900ABA25A /* Internal */,
+				89907A47120808630038237B /* Other */,
+				92808DC81103C33200BD61DE /* Styles */,
+				89907A4A120808920038237B /* Subclasses */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8982C94A127D05C0003C1E6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8982C94C127D05EB003C1E6A /* BPCell.m */,
+				8982C94B127D05EB003C1E6A /* BPCell.h */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		89907A47120808630038237B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				929557C511F6DBF000FAB8E4 /* BPAudioMetadataReader.m */,
+				929557C411F6DBF000FAB8E4 /* BPAudioMetadataReader.h */,
+				8997FC351099129400C2FCAB /* BPTimeIntervalFormatter.m */,
+				8997FC341099129400C2FCAB /* BPTimeIntervalFormatter.h */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		89907A4A120808920038237B /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				9234128D11DAE66D00C8C30B /* BPMenu.m */,
+				9234128C11DAE66D00C8C30B /* BPMenu.h */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		899175EE10817C7500E02DEA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8997FC2A1099127D00C2FCAB /* BPAlertRulesController.m */,
+				8997FC291099127D00C2FCAB /* BPAlertRulesController.h */,
+				8997FC301099128600C2FCAB /* BPApplicationDelegate.m */,
+				8997FC2F1099128600C2FCAB /* BPApplicationDelegate.h */,
+				92808DF01103CF6200BD61DE /* BPStatusItemStylesManager.m */,
+				92808DEF1103CF6200BD61DE /* BPStatusItemStylesManager.h */,
+				89E4DB3E10F7F85100091C5B /* Logging */,
+				89A2A26C108BD9F000A333C1 /* Window Controllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		89A2A26C108BD9F000A333C1 /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8997FC1B1099126100C2FCAB /* BPAlertCreationWindowController.m */,
+				8997FC1A1099126100C2FCAB /* BPAlertCreationWindowController.h */,
+				8997FC1D1099126100C2FCAB /* BPAlertsRulesWindowController.m */,
+				8997FC1C1099126100C2FCAB /* BPAlertsRulesWindowController.h */,
+				8997FC1F1099126100C2FCAB /* BPRulesCriterionWindowController.m */,
+				8997FC1E1099126100C2FCAB /* BPRulesCriterionWindowController.h */,
+				89845E2910E9AA48002A3055 /* BPStatusBarController.m */,
+				89845E2810E9AA48002A3055 /* BPStatusBarController.h */,
+			);
+			name = "Window Controllers";
+			sourceTree = "<group>";
+		};
+		89C4B0771093F15500D509D9 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				89E4DB7710F7FA2E00091C5B /* singleRule.xib */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				89E1D0C310AD114D00BA8C4A /* alerts.xib */,
+				8945697910D0E4E200CB8D59 /* Preferences.xib */,
+				89F90945120E32350020D9D7 /* ManageAlertsAndRules.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+		89D89BD4107D414B00316046 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				92E74C7B11F16028000F3686 /* NSArrayAdditions.m */,
+				92E74C7911F16006000F3686 /* NSArrayAdditions.h */,
+				9295587B11F710CA00FAB8E4 /* NSCellAdditions.m */,
+				9295587A11F710CA00FAB8E4 /* NSCellAdditions.h */,
+				89E1D15D10AE559400BA8C4A /* NSFileManagerAdditions.m */,
+				89E1D15C10AE559400BA8C4A /* NSFileManagerAdditions.h */,
+				92BFDE8511E4718900DA15E9 /* NSMenuItemAdditions.m */,
+				92BFDE8411E4718900DA15E9 /* NSMenuItemAdditions.h */,
+				894457AF120A9896005801B0 /* NSObjectAdditions.m */,
+				894457AE120A9896005801B0 /* NSObjectAdditions.h */,
+				92BFDE3111E46DA400DA15E9 /* NSStringAdditions.m */,
+				92BFDE3011E46DA400DA15E9 /* NSStringAdditions.h */,
+				92A188CC11F69EF200396469 /* NSViewAdditions.m */,
+				92A188CB11F69EF200396469 /* NSViewAdditions.h */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		89E4DB3E10F7F85100091C5B /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				89E4DA8D10F7EA8100091C5B /* BPGraphLoggingController.m */,
+				89E4DA8C10F7EA8100091C5B /* BPGraphLoggingController.h */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+		92298A9B11F54A8200607820 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				892473EC1089294900B1BA01 /* Voltage-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				893EEF6F10706CE500666A37 /* net.thisismyinter.voltage.plist */,
+			);
+			name = plists;
+			sourceTree = "<group>";
+		};
+		92808DC81103C33200BD61DE /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				92808DBA1103BE5300BD61DE /* BPStatusItemStyle.m */,
+				92808DB91103BE5300BD61DE /* BPStatusItemStyle.h */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
+		92808DC91103C34500BD61DE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				89E1164F10F077F200CC112C /* BPModel.m */,
+				89E1164E10F077F200CC112C /* BPModel.h */,
+				8997FC39109912A300C2FCAB /* BPAlert.m */,
+				8997FC38109912A300C2FCAB /* BPAlert.h */,
+				8997FC3B109912A300C2FCAB /* BPRule.m */,
+				8997FC3A109912A300C2FCAB /* BPRule.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Voltage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Voltage" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				8957E32A1088359400F21648 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Voltage;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Voltage;
+			productReference = 8D1107320486CEB800E47090 /* Voltage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Voltage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Voltage */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Voltage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				892475981089337100B1BA01 /* Growl Registration Ticket.growlRegDict in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				893EEF7010706CE500666A37 /* net.thisismyinter.voltage.plist in Resources */,
+				89E1D0C510AD114D00BA8C4A /* alerts.xib in Resources */,
+				8945697B10D0E4E300CB8D59 /* Preferences.xib in Resources */,
+				89E4DB7910F7FA2E00091C5B /* singleRule.xib in Resources */,
+				89F90947120E32350020D9D7 /* ManageAlertsAndRules.xib in Resources */,
+				8914CE5E127DEC54000BF0D7 /* add.tif in Resources */,
+				8914CE5F127DEC54000BF0D7 /* pause.tif in Resources */,
+				8914CE60127DEC54000BF0D7 /* remove.tif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				8997FC201099126100C2FCAB /* BPAlertCreationWindowController.m in Sources */,
+				8997FC211099126100C2FCAB /* BPAlertsRulesWindowController.m in Sources */,
+				8997FC221099126100C2FCAB /* BPRulesCriterionWindowController.m in Sources */,
+				8997FC2D1099127D00C2FCAB /* BPAlertRulesController.m in Sources */,
+				8997FC311099128600C2FCAB /* BPApplicationDelegate.m in Sources */,
+				8997FC371099129400C2FCAB /* BPTimeIntervalFormatter.m in Sources */,
+				8997FC3E109912A300C2FCAB /* BPAlert.m in Sources */,
+				8997FC3F109912A300C2FCAB /* BPRule.m in Sources */,
+				8997FC43109912AD00C2FCAB /* BPPowerSourceInformation.m in Sources */,
+				894FB59310A407C600E2F34C /* BPAlertGenerator.m in Sources */,
+				89E1D15E10AE559400BA8C4A /* NSFileManagerAdditions.m in Sources */,
+				89845E2A10E9AA48002A3055 /* BPStatusBarController.m in Sources */,
+				8931D12B10EF606000ABA25A /* BPDevicePowerSources.m in Sources */,
+				89E1165010F077F200CC112C /* BPModel.m in Sources */,
+				89C5561510F48B1F0052ED99 /* BPConstants.m in Sources */,
+				89E4DA8E10F7EA8100091C5B /* BPGraphLoggingController.m in Sources */,
+				92808DBB1103BE5300BD61DE /* BPStatusItemStyle.m in Sources */,
+				92808DF11103CF6200BD61DE /* BPStatusItemStylesManager.m in Sources */,
+				9234128E11DAE66D00C8C30B /* BPMenu.m in Sources */,
+				92BFDE3211E46DA400DA15E9 /* NSStringAdditions.m in Sources */,
+				92BFDE8611E4718900DA15E9 /* NSMenuItemAdditions.m in Sources */,
+				92E74C7C11F16028000F3686 /* NSArrayAdditions.m in Sources */,
+				92A188CD11F69EF200396469 /* NSViewAdditions.m in Sources */,
+				929557C611F6DBF000FAB8E4 /* BPAudioMetadataReader.m in Sources */,
+				9295587C11F710CA00FAB8E4 /* NSCellAdditions.m in Sources */,
+				894457B0120A9896005801B0 /* NSObjectAdditions.m in Sources */,
+				8982C94D127D05EB003C1E6A /* BPCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* InfoPlist.strings */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		8945697910D0E4E200CB8D59 /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8945697A10D0E4E200CB8D59 /* English */,
+			);
+			name = Preferences.xib;
+			sourceTree = "<group>";
+		};
+		89E1D0C310AD114D00BA8C4A /* alerts.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E1D0C410AD114D00BA8C4A /* English */,
+			);
+			name = alerts.xib;
+			sourceTree = "<group>";
+		};
+		89E4DB7710F7FA2E00091C5B /* singleRule.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E4DB7810F7FA2E00091C5B /* singleRule.xib */,
+			);
+			name = singleRule.xib;
+			sourceTree = "<group>";
+		};
+		89F90945120E32350020D9D7 /* ManageAlertsAndRules.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89F90946120E32350020D9D7 /* English */,
+			);
+			name = ManageAlertsAndRules.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Voltage_Prefix.pch;
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
+				INFOPLIST_FILE = "Voltage-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Voltage;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Voltage_Prefix.pch;
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
+				INFOPLIST_FILE = "Voltage-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Voltage;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_EXPERIMENTAL = NO;
+				CLANG_X86_VECTOR_INSTRUCTIONS = default;
+				DEAD_CODE_STRIPPING = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = ".hg *.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_PASCAL_STRINGS = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_STRICT_ALIASING = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_THREADSAFE_STATICS = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "\"$SRCROOT/Resources/Voltage-Info.plist\"";
+				LD_OPENMP_FLAGS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DDEBUG";
+				PLIST_FILE_OUTPUT_FORMAT = binary;
+				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_X86_VECTOR_INSTRUCTIONS = default;
+				DEAD_CODE_STRIPPING = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = ".hg *.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_PASCAL_STRINGS = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_STRICT_ALIASING = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_THREADSAFE_STATICS = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "\"$SRCROOT/Resources/Voltage-Info.plist\"";
+				LD_OPENMP_FLAGS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PLIST_FILE_OUTPUT_FORMAT = binary;
+				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Voltage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Voltage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

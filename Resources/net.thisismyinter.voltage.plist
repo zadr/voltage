@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BPLogPath</key>
+	<string>~/Library/Application Support/Voltage/Logs/logging.log</string>
+	<key>BPLoggingLevel</key>
+	<integer>1</integer>
+	<key>BPQuitForegroundApplication</key>
+	<false/>
+	<key>BPHaltForegroundApplication</key>
+	<false/>
+	<key>BPAllowAnalytics</key>
+	<false/>
+	<key>BPAskedToAllowAnalytics</key>
+	<false/>
+	<key>BPSendCrashReports</key>
+	<integer>0</integer>
+	<key>BPLastSentCrashReportDate</key>
+	<date>2001-01-01T05:00:00Z</date>
+	<key>BPHaltIfUsingCPUAmount</key>
+	<integer>15</integer>
+	<key>BPQuitIfUsingCPUAmount</key>
+	<integer>15</integer>
+	<key>BPKeepTenMinuteRule</key>
+	<true/>
+	<key>BPLongFormatting</key>
+	<false/>
+	<key>BPWarnBeforeAlertRuleRemoval</key>
+	<true/>
+	<key>BPMakeGraphs</key>
+	<false/>
+	<key>BPIgnoreAccidentalStateChanges</key>
+	<integer>5</integer>
+	<key>BPTimeBetweenSameRule</key>
+	<integer>60</integer>
+	<key>BPWarnBeforeCancelingModification</key>
+	<true/>
+	<key>BPWaitAfterWakeInterval</key>
+	<integer>60</integer>
+	<key>BPShowStatusBarIcon</key>
+	<true/>
+	<key>BPShowPercentInStatusBar</key>
+	<true/>
+	<key>BPShowTimeInStatusBar</key>
+	<true/>
+	<key>BPLaunchInBackground</key>
+	<true/>
+</dict>
+</plist>

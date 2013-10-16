@@ -1,0 +1,30 @@
+// 1.0
+• Make creating rules and alerts prettier
+
+• App icon
+• Make icons for Growl bubbles
+• Notification Center
+
+• Add alert type:
+	• Flash the screen a particular color
+
+// 1.1
+• Demo/test alerts
+	- Audio goes until it hits stop
+	- Script just runs
+	- Window pops up
+	- Growl growls
+	- Screen flashes until mouse is moved, a la screensaver
+
+// 1.2 
+• Inverse rules (for when the battery is charging instead of draining)
+• AND and OR for rules to run the same alerts
+
+// 1.4
+• Make graphs for the battery for things like:
+	• Maximum capacity over time.
+	• Maximum capacity vs number of charges
+	• Hours per day battery is in use
+		• Charging
+		• Drawing power from
+	• Generic to select elements and automatically make the graph

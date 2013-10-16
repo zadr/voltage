@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TicketVersion</key>
+	<integer>1</integer>
+	<key>AllNotifications</key>
+	<array>
+		<string>Time Remaining</string>
+		<string>Percent Remaining</string>
+		<string>mAh Remaining</string>
+		<string>Time Plugged In</string>
+		<string>Time On Battery</string>
+		<string>Power Source Lost</string>
+		<string>Power Source Gained</string>
+	</array>
+</dict>
+</plist>

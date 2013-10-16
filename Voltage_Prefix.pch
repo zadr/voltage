@@ -1,0 +1,16 @@
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+
+	#import "NSFileManagerAdditions.h"
+	#import "NSArrayAdditions.h"
+	#import "NSCellAdditions.h"
+	#import "NSFileManagerAdditions.h"
+	#import "NSMenuItemAdditions.h"
+	#import "NSObjectAdditions.h"
+	#import "NSStringAdditions.h"
+	#import "NSViewAdditions.h"
+
+	#import "BPConstants.h"
+
+	#import <dispatch/dispatch.h>
+#endif

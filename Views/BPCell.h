@@ -1,0 +1,2 @@
+@interface BPCell : NSCell
+@end
