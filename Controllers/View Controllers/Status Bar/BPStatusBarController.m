@@ -61,7 +61,6 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:BPRulesChangedNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:BPAlertChangedNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:BPPowerSourceUpdateNotification object:nil];
-
 }
 
 #pragma mark -

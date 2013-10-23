@@ -117,8 +117,6 @@
 			return YES;
 		if ([alertType isEqualToString:BPAudioAlert] && [_alert.type isEqualToString:BPAudioAlert])
 			return YES;
-		if ([alertType isEqualToString:BPGrowlAlert] && [_alert.type isEqualToString:BPGrowlAlert])
-			return YES;
 	}
 
 	return NO;

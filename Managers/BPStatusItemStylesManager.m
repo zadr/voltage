@@ -15,7 +15,7 @@
 }
 
 - (void) loadExistingStyles {
-	NSString *bundleName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+	NSString *bundleName = [[NSBundle mainBundle] objectForInfoDictionaryKey:(id)kCFBundleNameKey];
 	NSMutableArray *paths = [NSMutableArray arrayWithCapacity:5];
 
 	NSBundle *selfClassBundle = [NSBundle bundleForClass:[self class]];

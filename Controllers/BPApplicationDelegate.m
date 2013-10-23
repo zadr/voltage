@@ -106,18 +106,4 @@
 
 	return ![[NSFileManager defaultManager] moveItemAtPath:file toPath:newFilePath error:&error];
 }
-
-#pragma mark -
-
-- (NSImage *) applicationIconForGrowl {
-	return nil;
-
-	NSInteger percentRemaining = [BPPowerSourceInformation sharedInstance].percentRemaining;
-	percentRemaining = percentRemaining > 0 ? ((percentRemaining / 10) * 10) : 0; // TODO: fix for 1-9%
-
-	NSString *imageName = [NSString stringWithFormat:@"battery-%ld.png", percentRemaining];
-	NSURL *imageURL = [[NSRunningApplication currentApplication].bundleURL URLByAppendingPathExtension:[NSString stringWithFormat:@"Contents/Resources/%@", imageName]];
-
-	return [[NSImage alloc] initWithContentsOfURL:imageURL];
-}
 @end

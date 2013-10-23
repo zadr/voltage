@@ -121,7 +121,7 @@
 
 		values[@"type"] = ruleType;
 
-		if ([alertType isEqualToString:BPNSAlert] || [alertType isEqualToString:BPGrowlAlert]) {
+		if ([alertType isEqualToString:BPNSAlert]) {
 			if ([ruleType isEqualToString:BPPowerTimeRemainingRule]) {
 				number = [BPPowerSourceInformation sharedInstance].timeRemaining;
 
@@ -252,8 +252,7 @@
 			return;
 	}
 
-	NSDictionary *ruleDictionary = @{@"rule": @{@"rule-type": rule.type, @"rule-string": rule.rule, @"rule-enabled": @(rule.enabled)}};
-	[currentRulesAndAlerts addObject:ruleDictionary];
+	[currentRulesAndAlerts addObject:@{ @"rule": @{ @"rule-type": rule.type, @"rule-string": rule.rule, @"rule-enabled": @(rule.enabled) } }];
 
 	[self saveRulesAndAlerts:currentRulesAndAlerts];
 }
@@ -282,7 +281,7 @@
 
 		NSMutableArray *alertsArray = [NSMutableArray array];
 		for (BPAlert *newAlert in rule.alerts)
-			[alertsArray addObject:@{@"alert-values": newAlert.values, @"alert-type": newAlert.type, @"alert-enabled": @(newAlert.enabled)}];
+			[alertsArray addObject:@{ @"alert-values": newAlert.values, @"alert-type": newAlert.type, @"alert-enabled": @(newAlert.enabled) }];
 		dictionary[@"alerts"] = alertsArray;
 
 		break;
@@ -311,40 +310,31 @@
 
 	[self saveRule:rule];
 
-	NSDictionary *userInfo = @{@"position": @(_allRules.count - 1), @"added": @YES};
-
-	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:userInfo];
+	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:@{ @"position": @(_allRules.count - 1), @"added": @YES }];
 }
 
 // Remove it from the _disabledRules array and decrease everything after it by one, if necessary
 - (void) removeRule:(BPRule *) rule {
 	NSNumber *number = @([self indexOfRule:rule.rule]);
-	NSDictionary *userInfo = @{@"position": number, @"added": @NO};
 
 	[_allRules removeObject:rule];
 	[_disabledRules removeObject:number]; // Rather then getting the count of the array AND iterating through it to remove the object, just try and remove it. If it fails, it just looks through once, rather than twice, nothing else.
 
-	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:userInfo];
+	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:@{ @"position": number, @"added": @NO }];
 }
 
 // Remove it from the _disabledRules array and decrease everything after it by one, if necessary
 - (void) removeRuleAtIndex:(NSInteger) ruleIndex {
-	NSNumber *number = @(ruleIndex);
-	NSDictionary *userInfo = @{@"position": number, @"added": @NO};
-
 	[_allRules safeRemoveObjectAtSignedIndex:ruleIndex];
-	[_disabledRules removeObject:number];
+	[_disabledRules removeObject:@(ruleIndex)];
 
-	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:userInfo];
+	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:@{ @"position": @(ruleIndex), @"added": @NO }];
 }
 
 - (void) replaceRuleAtIndex:(NSInteger) ruleIndex withRule:(BPRule *) rule {
 	[_allRules safeReplaceObjectAtSignedIndex:ruleIndex withObject:rule];
 
-	NSNumber *number = @(ruleIndex);
-	NSDictionary *userInfo = @{@"position": number, @"added": @NO};
-
-	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:userInfo];
+	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:@{ @"position": @(ruleIndex), @"added": @NO }];
 }
 
 #pragma mark -

@@ -31,7 +31,6 @@ extern NSString *const BPTimeBetweenSameRule;				// How long to wait between fir
 extern NSString *const BPAlertChangedNotification;			// Notification fired when an alert is changed
 extern NSString *const BPNSAlert;							// Key for NSAlert popups
 extern NSString *const BPAudioAlert;						// Key for Audio alerts
-extern NSString *const BPGrowlAlert;						// Key for Growl alerts
 extern NSString *const BPScriptAlert;						// Key for scripts run after a rule is matched
 
 // Alert Keys
@@ -39,7 +38,6 @@ extern NSString *const BPNSAlertAlwaysOnTop;				// Should the NSAlert window alw
 extern NSString *const BPAudioRepeats;						// Should the sound repeat until halted?
 extern NSString *const BPMaximumVolume;						// Should we play the sound at maximum volume?
 extern NSString *const BPAudioPath;							// Where is the sound located?
-extern NSString *const BPGrowlIsSticky;						// Should the growl item stay until clicked?
 extern NSString *const BPScriptPath;						// Where is the script located?
 
 // Rules

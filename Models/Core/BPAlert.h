@@ -2,7 +2,7 @@
 
 @interface BPAlert : BPModel {
 @private
-	NSMutableDictionary *_values; // The values for the alert, what sound file to play, should growl be sticky, etc
+	NSMutableDictionary *_values; // The values for the alert, what sound file to play, etc
 }
 
 @property (nonatomic, strong) NSMutableDictionary *values;

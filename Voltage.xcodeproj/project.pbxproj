@@ -19,7 +19,6 @@
 		894457B0120A9896005801B0 /* NSObjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 894457AF120A9896005801B0 /* NSObjectAdditions.m */; };
 		8945697B10D0E4E300CB8D59 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8945697910D0E4E200CB8D59 /* Preferences.xib */; };
 		894FB59310A407C600E2F34C /* BPAlertGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 894FB59210A407C600E2F34C /* BPAlertGenerator.m */; };
-		8957E2D41088351500F21648 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8957E2D31088351500F21648 /* Growl.framework */; };
 		8957E31C1088357D00F21648 /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8957E2D31088351500F21648 /* Growl.framework */; };
 		8982C94D127D05EB003C1E6A /* BPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8982C94C127D05EB003C1E6A /* BPCell.m */; };
 		89845E2A10E9AA48002A3055 /* BPStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89845E2910E9AA48002A3055 /* BPStatusBarController.m */; };
@@ -159,7 +158,6 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				893EEF3910706AD900666A37 /* IOKit.framework in Frameworks */,
 				89034DA11078755B00A78FB9 /* Security.framework in Frameworks */,
-				8957E2D41088351500F21648 /* Growl.framework in Frameworks */,
 				9234019011D5CCA800C8C30B /* SystemConfiguration.framework in Frameworks */,
 				923401A811D5CD4500C8C30B /* AddressBook.framework in Frameworks */,
 			);
@@ -433,6 +431,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Voltage" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;

@@ -2,7 +2,6 @@
 • Make creating rules and alerts prettier
 
 • App icon
-• Make icons for Growl bubbles
 • Notification Center
 
 • Add alert type:
@@ -13,7 +12,6 @@
 	- Audio goes until it hits stop
 	- Script just runs
 	- Window pops up
-	- Growl growls
 	- Screen flashes until mouse is moved, a la screensaver
 
 // 1.2 

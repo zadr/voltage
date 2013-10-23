@@ -71,22 +71,6 @@
 	}
 
 	/*
-	 type: BPGrowlAlert
-	 Additional Keys:
-		BPGrowlIsSticky - BOOL, Should it stay until clicked on?
-	*/
-	else if ([_type isEqualToString:BPGrowlAlert]) {
-		_humanReadableFormat = NSLocalizedString(@"Growl notification", @"Growl notification human readable");
-
-		object = values[BPGrowlIsSticky];
-		if (object && [object boolValue]) {
-			_values[BPGrowlIsSticky] = object;
-
-			_humanReadableFormat = NSLocalizedString(@"Growl notification that stays on screen until clicked", @"Growl notification that stays on screen until clicked. human readable");
-		}
-	}
-
-	/*
 	 type: BPScriptAlert
 	 Additional Keys:
 		BPScriptPaths - NSString, Path to script to run
@@ -139,7 +123,7 @@
 	static NSSet *singleAlertKeys = nil;
 
 	if (!singleAlertKeys)
-		singleAlertKeys = [NSSet setWithObjects:BPNSAlert, BPAudioAlert, BPGrowlAlert, nil];
+		singleAlertKeys = [NSSet setWithObjects:BPNSAlert, BPAudioAlert, nil];
 	return singleAlertKeys;
 }
 

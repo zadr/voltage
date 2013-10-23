@@ -31,7 +31,6 @@ NSString *const BPTimeBetweenSameRule = @"BPTimeBetweenSameRule";
 NSString *const BPAlertChangedNotification = @"BPAlertChangedNotification";
 NSString *const BPNSAlert = @"BPNSAlert";
 NSString *const BPAudioAlert = @"BPAudioAlert";
-NSString *const BPGrowlAlert = @"BPGrowlAlert";
 NSString *const BPScriptAlert = @"BPScriptAlert";
 
 // More Alerts (Keys)
@@ -39,7 +38,6 @@ NSString *const BPNSAlertAlwaysOnTop = @"BPNSAlertAlwaysOnTop";
 NSString *const BPAudioRepeats = @"BPAudioRepeats";
 NSString *const BPMaximumVolume = @"BPMaximumVolume";
 NSString *const BPAudioPath = @"BPAudioPath";
-NSString *const BPGrowlIsSticky = @"BPGrowlIsSticky";
 NSString *const BPScriptPath = @"BPScriptPath";
 
 // Rules

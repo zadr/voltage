@@ -5,8 +5,6 @@
 		1. Path of audio file to play
 		2. Checkbox: Should the sound repeat?
 		3. Checkbox: Should the sound play at max volume?
-	Growl:
-		1. Checkbox: Stay on screen until clicked?
 	Script:
 		1. Path of script to run
  
@@ -32,7 +30,6 @@
 
 #define PopupAlertTag 10
 #define AudioAlertTag 11
-#define GrowlAlertTag 12
 #define ScriptAlertTag 13
 
 #pragma mark -
@@ -57,8 +54,6 @@
 		return BPNSAlert;
 	else if (selectedAlertTag == AudioAlertTag)
 		return BPAudioAlert;
-	else if (selectedAlertTag == GrowlAlertTag)
-		return BPGrowlAlert;
 	else if (selectedAlertTag == ScriptAlertTag)
 		return BPScriptAlert;
 	return nil;
@@ -78,8 +73,6 @@
 			return nil;
 
 		values[BPAudioPath] = _filePath;
-	} else if (selectedAlertTag == GrowlAlertTag) {
-		values[BPGrowlIsSticky] = @(_firstButton.state);
 	} else if (selectedAlertTag == ScriptAlertTag) {
 		if (!_filePath.length)
 			return nil;
@@ -111,8 +104,6 @@
 		[_alertTypePopUp selectItemWithTag:PopupAlertTag];
 	} else if ([type isEqualToString:BPAudioAlert]) {
 		[_alertTypePopUp selectItemWithTag:AudioAlertTag];
-	} else if ([type isEqualToString:BPGrowlAlert]) {
-		[_alertTypePopUp selectItemWithTag:GrowlAlertTag];
 	} else if ([type isEqualToString:BPScriptAlert]) {
 		[_alertTypePopUp selectItemWithTag:ScriptAlertTag];
 	} 
@@ -156,18 +147,6 @@
 
 		_leftTableView.hidden = YES;
 		_rightTableView.hidden = YES;
-	} else if ([type isEqualToString:BPGrowlAlert]) {
-		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, window.frame.size.width, 154) display:YES animate:YES];
-
-		_firstButton.title = NSLocalizedString(@"Stay until clicked", @"Stay until clicked checkbox");
-		_firstButton.frame = NSMakeRect(_firstButton.frame.origin.x, 56, _firstButton.frame.size.width, _firstButton.frame.size.height);
-		_firstButton.hidden = NO;
-
-		_secondButton.hidden = YES;
-		_pathField.hidden = YES;
-		_pathSelectButton.hidden = YES;
-		_leftTableView.hidden = YES;
-		_rightTableView.hidden = YES;
 	} else if ([type isEqualToString:BPScriptAlert]) { // NSOpenPanel
 		[window setFrame:NSMakeRect(window.frame.origin.x, window.frame.origin.y, window.frame.size.width, 154) display:YES animate:YES];
 
@@ -206,6 +185,7 @@
 
 - (IBAction) createOrModifyAlert:(id) sender {
 	BPAlert *alert = [BPAlert alertWithAlert:[self alertTypeForSelection] values:[self valuesForSelection]];
+	NSLog(@"Create or modify %@", alert);
 
 	if ([_attachedRule containsAlert:alert]) {
 		NSAlert *alertView = [NSAlert alertWithMessageText:NSLocalizedString(@"Alert Already Exists", @"Alert Already Exists sheet title") defaultButton:NSLocalizedString(@"Ok", @"Ok button title") alternateButton:nil otherButton:nil informativeTextWithFormat:NSLocalizedString(@"An alert identical to \"%@\" already exists.", @"An alert identical to \"%@\" already exists message text."), alert.humanReadableFormat];
