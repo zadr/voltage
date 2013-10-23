@@ -298,6 +298,8 @@
 
 // Disable the rule and keep track of it, if all the rules are disabled
 - (void) addRule:(BPRule *) rule {
+	[rule addAlert:[BPAlert alertWithAlert:BPNSAlert values:@{}]];
+
 	if ([self containsRule:rule])
 		return;
 
