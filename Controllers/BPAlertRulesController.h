@@ -3,7 +3,7 @@
 
 @interface BPAlertRulesController : NSObject {
 @private
-	NSMutableArray *__weak _allRules;
+	NSMutableArray *_allRules;
 	NSMutableArray *_disabledRules;
 
 	NSTimeInterval _wakeTime;
