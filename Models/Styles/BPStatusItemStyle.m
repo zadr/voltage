@@ -9,13 +9,13 @@
 	NSDictionary *information = [NSDictionary dictionaryWithContentsOfURL:url];
 
 	_path = path;
-	_identifier = [information objectForKey:@"identifier"];
-	_displayName = [information objectForKey:@"display-name"];
+	_identifier = information[@"identifier"];
+	_displayName = information[@"display-name"];
 
 	if (![self isValid])
 		return nil;
 
-	NSNumber *percentBasedString = [information objectForKey:@"percent-based-string"];
+	NSNumber *percentBasedString = information[@"percent-based-string"];
 
 	_percentBasedStyle = percentBasedString ? [percentBasedString boolValue] : YES;
 
@@ -61,7 +61,7 @@
 		if (![image isValid])
 			continue;
 
-		[_imageDictionary setObject:[information objectForKey:key] forKey:key];
+		_imageDictionary[key] = information[key];
 	}
 
 	return _imageDictionary;
@@ -78,7 +78,7 @@
 #pragma mark -
 
 - (NSImage *) updatingImage {
-	NSString *file = [NSString stringWithFormat:@"%@/%@", _path, [[self imageDictionary] objectForKey:@"updating"]];
+	NSString *file = [NSString stringWithFormat:@"%@/%@", _path, [self imageDictionary][@"updating"]];
 
 	return [[NSImage alloc] initWithContentsOfFile:file];
 }
@@ -93,7 +93,7 @@
 		else break;
 	}
 
-	NSString *file = [NSString stringWithFormat:@"%@/%@", _path, [_imageDictionary objectForKey:previousStatus]];
+	NSString *file = [NSString stringWithFormat:@"%@/%@", _path, _imageDictionary[previousStatus]];
 
 	return [[NSImage alloc] initWithContentsOfFile:file];
 }

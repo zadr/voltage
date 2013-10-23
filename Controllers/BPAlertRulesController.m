@@ -119,7 +119,7 @@
 		NSInteger number = 0;
 		NSString *form = nil;
 
-		[values setObject:ruleType forKey:@"type"];
+		values[@"type"] = ruleType;
 
 		if ([alertType isEqualToString:BPNSAlert] || [alertType isEqualToString:BPGrowlAlert]) {
 			if ([ruleType isEqualToString:BPPowerTimeRemainingRule]) {
@@ -147,14 +147,14 @@
 				informativeText = NSLocalizedString(@"A power source was added from your Mac.", @"A power source was added to your Mac informative text.");
 			}
 
-			[values setObject:rule.humanReadableFormat forKey:@"message-text"];
-			[values setObject:informativeText forKey:@"informative-text"];
+			values[@"message-text"] = rule.humanReadableFormat;
+			values[@"informative-text"] = informativeText;
 
 			if ([alertType isEqualToString:BPNSAlert]) {
 				if ([[BPAlertGenerator sharedInstance] popupAlertWithInformation:values])
 					logString = NSLocalizedString(@"NSAlert alert displayed", @"NSAlert alert type displayed logging message");
 			} else {
-				[values setObject:notificationType forKey:@"notification-type"];
+				values[@"notification-type"] = notificationType;
 			}
 		} else if ([alertType isEqualToString:BPAudioAlert]) {
 			if ([[BPAlertGenerator sharedInstance] audioAlertWithInformation:values])
@@ -181,7 +181,7 @@
 		BPRule *rule = nil;
 
 		for (NSUInteger i = 0; i < _allRules.count; i++) {
-			rule = [_allRules objectAtIndex:i];
+			rule = _allRules[i];
 
 			if (rule.enabled) {
 				rule.enabled = NO;
@@ -244,15 +244,15 @@
 		return;
 
 	for (NSDictionary *dictionary in currentRulesAndAlerts) {
-		NSMutableDictionary *ruleDictionary = [dictionary objectForKey:@"rule"];
-		NSString *ruleString = [ruleDictionary objectForKey:@"rule-string"];
-		NSString *ruleType = [ruleDictionary objectForKey:@"rule-type"];
+		NSMutableDictionary *ruleDictionary = dictionary[@"rule"];
+		NSString *ruleString = ruleDictionary[@"rule-string"];
+		NSString *ruleType = ruleDictionary[@"rule-type"];
 
 		if ([ruleString isEqualToString:rule.rule] && [ruleType isEqualToString:rule.type])
 			return;
 	}
 
-	NSDictionary *ruleDictionary = [NSDictionary  dictionaryWithObject:[NSDictionary dictionaryWithObjectsAndKeys:rule.type, @"rule-type", rule.rule, @"rule-string", [NSNumber numberWithBool:rule.enabled], @"rule-enabled", nil] forKey:@"rule"];
+	NSDictionary *ruleDictionary = @{@"rule": @{@"rule-type": rule.type, @"rule-string": rule.rule, @"rule-enabled": @(rule.enabled)}};
 	[currentRulesAndAlerts addObject:ruleDictionary];
 
 	[self saveRulesAndAlerts:currentRulesAndAlerts];
@@ -267,14 +267,14 @@
 	NSMutableDictionary *dictionary = nil;
 	NSUInteger i = 0;
 	for (i = 0; i < currentRulesAndAlerts.count; i++) {
-		dictionary = [[currentRulesAndAlerts objectAtIndex:i] mutableCopy];
+		dictionary = [currentRulesAndAlerts[i] mutableCopy];
 
-		NSMutableDictionary *ruleDictionary = [[dictionary objectForKey:@"rule"] mutableCopy];
-		NSString *ruleString = [ruleDictionary objectForKey:@"rule-string"];
+		NSMutableDictionary *ruleDictionary = [dictionary[@"rule"] mutableCopy];
+		NSString *ruleString = ruleDictionary[@"rule-string"];
 		if (![ruleString isEqualToString:rule.type]) 
 			continue;
 
-		NSString *ruleType = [ruleDictionary objectForKey:@"rule-type"];
+		NSString *ruleType = ruleDictionary[@"rule-type"];
 		if (![ruleType isEqualToString:rule.type])
 			continue;
 
@@ -282,14 +282,14 @@
 
 		NSMutableArray *alertsArray = [NSMutableArray array];
 		for (BPAlert *newAlert in rule.alerts)
-			[alertsArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:newAlert.values, @"alert-values", newAlert.type, @"alert-type", [NSNumber numberWithBool:newAlert.enabled], @"alert-enabled", nil]];
-		[dictionary setObject:alertsArray forKey:@"alerts"];
+			[alertsArray addObject:@{@"alert-values": newAlert.values, @"alert-type": newAlert.type, @"alert-enabled": @(newAlert.enabled)}];
+		dictionary[@"alerts"] = alertsArray;
 
 		break;
 	}
 
 	if (changed) {
-		[currentRulesAndAlerts replaceObjectAtIndex:i withObject:dictionary];
+		currentRulesAndAlerts[i] = dictionary;
 
 		[self saveRulesAndAlerts:currentRulesAndAlerts];
 	}
@@ -304,22 +304,22 @@
 
 	if (_disabledRules.count) {
 		rule.enabled = NO;
-		[_disabledRules addObject:[NSNumber numberWithUnsignedInteger:(_allRules.count + 1)]];
+		[_disabledRules addObject:@(_allRules.count + 1)];
 	}
 
 	[_allRules addObject:rule];
 
 	[self saveRule:rule];
 
-	NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInteger:(_allRules.count - 1)], @"position", [NSNumber numberWithBool:YES], @"added", nil];
+	NSDictionary *userInfo = @{@"position": @(_allRules.count - 1), @"added": @YES};
 
 	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:userInfo];
 }
 
 // Remove it from the _disabledRules array and decrease everything after it by one, if necessary
 - (void) removeRule:(BPRule *) rule {
-	NSNumber *number = [NSNumber numberWithInteger:[self indexOfRule:rule.rule]];
-	NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:number, @"position", [NSNumber numberWithBool:NO], @"added", nil];
+	NSNumber *number = @([self indexOfRule:rule.rule]);
+	NSDictionary *userInfo = @{@"position": number, @"added": @NO};
 
 	[_allRules removeObject:rule];
 	[_disabledRules removeObject:number]; // Rather then getting the count of the array AND iterating through it to remove the object, just try and remove it. If it fails, it just looks through once, rather than twice, nothing else.
@@ -329,8 +329,8 @@
 
 // Remove it from the _disabledRules array and decrease everything after it by one, if necessary
 - (void) removeRuleAtIndex:(NSInteger) ruleIndex {
-	NSNumber *number = [NSNumber numberWithInteger:ruleIndex];
-	NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:number, @"position", [NSNumber numberWithBool:NO], @"added", nil];
+	NSNumber *number = @(ruleIndex);
+	NSDictionary *userInfo = @{@"position": number, @"added": @NO};
 
 	[_allRules safeRemoveObjectAtSignedIndex:ruleIndex];
 	[_disabledRules removeObject:number];
@@ -341,8 +341,8 @@
 - (void) replaceRuleAtIndex:(NSInteger) ruleIndex withRule:(BPRule *) rule {
 	[_allRules safeReplaceObjectAtSignedIndex:ruleIndex withObject:rule];
 
-	NSNumber *number = [NSNumber numberWithInteger:ruleIndex];
-	NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:number, @"position", [NSNumber numberWithBool:NO], @"added", nil];
+	NSNumber *number = @(ruleIndex);
+	NSDictionary *userInfo = @{@"position": number, @"added": @NO};
 
 	[[NSNotificationCenter defaultCenter] postNotificationName:BPRulesChangedNotification object:nil userInfo:userInfo];
 }

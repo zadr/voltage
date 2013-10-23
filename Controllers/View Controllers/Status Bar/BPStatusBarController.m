@@ -73,7 +73,7 @@
 		systemUIServerPreferencesURL = [NSURL fileURLWithPath:[[[NSFileManager defaultManager] userLibraryPath] stringByAppendingString:@"/Preferences/com.apple.systemuiserver.plist"]];
 
 	NSMutableDictionary *systemUIServerPreferences = [NSDictionary dictionaryWithContentsOfURL:systemUIServerPreferencesURL];
-	NSMutableArray *menuExtras = [[systemUIServerPreferences objectForKey:@"menuExtras"] mutableCopy];
+	NSMutableArray *menuExtras = [systemUIServerPreferences[@"menuExtras"] mutableCopy];
 
 	return [menuExtras containsObject:batteryMenuPath];
 }
@@ -87,7 +87,7 @@
 	NSURL *systemUIServerPreferencesURL = [NSURL fileURLWithPath:[[[NSFileManager defaultManager] userLibraryPath] stringByAppendingString:@"/Preferences/com.apple.systemuiserver.plist"]];
 
 	NSMutableDictionary *systemUIServerPreferences = [[NSDictionary dictionaryWithContentsOfURL:systemUIServerPreferencesURL] mutableCopy];
-	NSMutableArray *menuExtras = [[systemUIServerPreferences objectForKey:menuExtrasString] mutableCopy];
+	NSMutableArray *menuExtras = [systemUIServerPreferences[menuExtrasString] mutableCopy];
 
 	if (![menuExtras containsObject:batteryMenuPath])
 		return;
@@ -98,12 +98,12 @@
 		return;
 
 	[menuExtras removeObject:batteryMenuPath];
-	[systemUIServerPreferences setObject:menuExtras forKey:menuExtrasString];
+	systemUIServerPreferences[menuExtrasString] = menuExtras;
 
 	if ([systemUIServerPreferences writeToURL:systemUIServerPreferencesURL atomically:YES]) {
 		NSTask *task = [[NSTask alloc] init];
 		task.launchPath = @"/usr/bin/killall";
-		task.arguments = [NSArray arrayWithObject:@"SystemUIServer"];
+		task.arguments = @[@"SystemUIServer"];
 
 		[task launch];
 

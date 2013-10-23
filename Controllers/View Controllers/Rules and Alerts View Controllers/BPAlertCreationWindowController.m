@@ -69,22 +69,22 @@
 	NSMutableDictionary *values = [NSMutableDictionary dictionary];
 
 	if (selectedAlertTag == PopupAlertTag) {
-		[values setObject:[NSNumber numberWithInteger:_firstButton.state] forKey:BPNSAlertAlwaysOnTop];
+		values[BPNSAlertAlwaysOnTop] = @(_firstButton.state);
 	} else if (selectedAlertTag == AudioAlertTag) {
-		[values setObject:[NSNumber numberWithInteger:_firstButton.state] forKey:BPAudioRepeats];
-		[values setObject:[NSNumber numberWithInteger:_secondButton.state] forKey:BPMaximumVolume];
+		values[BPAudioRepeats] = @(_firstButton.state);
+		values[BPMaximumVolume] = @(_secondButton.state);
 
 		if (!_filePath.length)
 			return nil;
 
-		[values setObject:_filePath forKey:BPAudioPath];
+		values[BPAudioPath] = _filePath;
 	} else if (selectedAlertTag == GrowlAlertTag) {
-		[values setObject:[NSNumber numberWithInteger:_firstButton.state] forKey:BPGrowlIsSticky];
+		values[BPGrowlIsSticky] = @(_firstButton.state);
 	} else if (selectedAlertTag == ScriptAlertTag) {
 		if (!_filePath.length)
 			return nil;
 
-		[values setObject:_filePath forKey:BPScriptPath];
+		values[BPScriptPath] = _filePath;
 	}
 
 	return values;

@@ -39,17 +39,17 @@
 		NSArray *alertsArray = nil;
 
 		for (NSDictionary *ruleAndAlert in rulesAndAlerts) {
-			ruleDictionary = [ruleAndAlert objectForKey:@"rule"];
-			alertsArray = [ruleAndAlert objectForKey:@"alerts"];
-			rule = [BPRule ruleWithRule:[ruleDictionary objectForKey:@"rule-string"] type:[ruleDictionary objectForKey:@"rule-type"]];
+			ruleDictionary = ruleAndAlert[@"rule"];
+			alertsArray = ruleAndAlert[@"alerts"];
+			rule = [BPRule ruleWithRule:ruleDictionary[@"rule-string"] type:ruleDictionary[@"rule-type"]];
 
-			if (![[ruleDictionary objectForKey:@"rule-enabled"] boolValue])
+			if (![ruleDictionary[@"rule-enabled"] boolValue])
 				rule.enabled = NO;
 
 			for (NSDictionary *alertDictionary in alertsArray) {
-				alert = [BPAlert alertWithAlert:[alertDictionary objectForKey:@"alert-type"] values:[alertDictionary objectForKey:@"alert-values"]];
+				alert = [BPAlert alertWithAlert:alertDictionary[@"alert-type"] values:alertDictionary[@"alert-values"]];
 
-				if (![[alertDictionary objectForKey:@"alert-enabled"] boolValue])
+				if (![alertDictionary[@"alert-enabled"] boolValue])
 					alert.enabled = NO;
 
 				[rule addAlert:alert];

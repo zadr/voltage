@@ -6,7 +6,7 @@ static inline BOOL safeAtSignedIndex(NSInteger index, NSUInteger count) {
 
 @implementation NSArray (NSArrayAdditions)
 - (id) safeObjectAtSignedIndex:(NSInteger) index {
-	return (safeAtSignedIndex(index, self.count)) ? [self objectAtIndex:(NSUInteger)index] : nil;
+	return (safeAtSignedIndex(index, self.count)) ? self[(NSUInteger)index] : nil;
 }
 
 - (NSInteger) signedCount {
@@ -25,6 +25,6 @@ static inline BOOL safeAtSignedIndex(NSInteger index, NSUInteger count) {
 
 - (void) safeReplaceObjectAtSignedIndex:(NSInteger) index withObject:(id) object {
 	if (safeAtSignedIndex(index, self.count))
-		[self replaceObjectAtIndex:(NSUInteger)index withObject:object];
+		self[(NSUInteger)index] = object;
 }
 @end

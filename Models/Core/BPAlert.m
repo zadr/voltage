@@ -22,9 +22,9 @@
 	if ([_type isEqualToString:BPNSAlert]) {
 		_humanReadableFormat = NSLocalizedString(@"Pop up a window", @"Pop up a window human readable string");
 
-		object = [values objectForKey:BPNSAlertAlwaysOnTop];
+		object = values[BPNSAlertAlwaysOnTop];
 		if (object) {
-			[_values setObject:object forKey:BPNSAlertAlwaysOnTop];
+			_values[BPNSAlertAlwaysOnTop] = object;
 
 			_humanReadableFormat = NSLocalizedString(@"Pop up a window on top of all other windows", @"Pop up a window on top of all other windows. human readable string");
 		}
@@ -38,31 +38,31 @@
 		 BPMaximumVolume — BOOL, Should it play at max volume regardless?
 	*/
 	else if ([_type isEqualToString:BPAudioAlert]) {
-		object = [values objectForKey:BPAudioPath];
+		object = values[BPAudioPath];
 		if ([(NSString *)object length]) {
 			if ([(NSString *)object isEqualToString:@"Beep"])
-				[_values setObject:@"Beep" forKey:BPAudioPath];
+				_values[BPAudioPath] = @"Beep";
 			else if ([[BPAlert systemAudioFiles] containsObject:object])
-				[_values setObject:[NSString stringWithFormat:@"/System/Library/Sounds/%@", object] forKey:BPAudioPath];
+				_values[BPAudioPath] = [NSString stringWithFormat:@"/System/Library/Sounds/%@", object];
 			else if ([[NSFileManager defaultManager] fileExistsAtPath:object])
-				[_values setObject:object forKey:BPAudioPath];
-			else [_values setObject:@"/System/Library/Sounds/Ping.aiff" forKey:BPAudioPath];
+				_values[BPAudioPath] = object;
+			else _values[BPAudioPath] = @"/System/Library/Sounds/Ping.aiff";
 		}
 
 		_humanReadableFormat = [NSString stringWithFormat:NSLocalizedString(@"Play %@", @"Play %@ human readable string"), (NSString *)object];
 
 		BOOL audioRepeats = NO;
-		object = [values objectForKey:BPAudioRepeats];
+		object = values[BPAudioRepeats];
 		if (object) {
 			audioRepeats = YES;
-			[_values setObject:object forKey:BPAudioRepeats];
+			_values[BPAudioRepeats] = object;
 
 			_humanReadableFormat = [NSString stringWithFormat:NSLocalizedString(@"Play %@ on repeat", @"Play %@  on repeat. human readable string"), (NSString *)object];
 		}
 
-		object = [values objectForKey:BPMaximumVolume];
+		object = values[BPMaximumVolume];
 		if (object) {
-			[_values setObject:object forKey:BPMaximumVolume];
+			_values[BPMaximumVolume] = object;
 
 			if (audioRepeats)
 				_humanReadableFormat = [NSString stringWithFormat:NSLocalizedString(@"Play %@ on repeat, at maximum volume", @"Play %@  on repeat, at maximum volume. human readable string"), (NSString *)object];
@@ -78,9 +78,9 @@
 	else if ([_type isEqualToString:BPGrowlAlert]) {
 		_humanReadableFormat = NSLocalizedString(@"Growl notification", @"Growl notification human readable");
 
-		object = [values objectForKey:BPGrowlIsSticky];
+		object = values[BPGrowlIsSticky];
 		if (object && [object boolValue]) {
-			[_values setObject:object forKey:BPGrowlIsSticky];
+			_values[BPGrowlIsSticky] = object;
 
 			_humanReadableFormat = NSLocalizedString(@"Growl notification that stays on screen until clicked", @"Growl notification that stays on screen until clicked. human readable");
 		}
@@ -93,10 +93,10 @@
 
 	*/
 	else if ([_type isEqualToString:BPScriptAlert]) {
-		object = [values objectForKey:BPScriptPath];
+		object = values[BPScriptPath];
 		if ([(NSString *)object length]) {
 			if ([[NSFileManager defaultManager] fileExistsAtPath:object] && [[NSFileManager defaultManager] isExecutableFileAtPath:object])
-				[_values setObject:object forKey:BPScriptPath];
+				_values[BPScriptPath] = object;
 
 			_humanReadableFormat = NSLocalizedString(@"Run %@", @"Run %@ human readable");
 		}

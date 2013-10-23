@@ -58,7 +58,7 @@
 	if (!item)
 		return [[BPAlertRulesController sharedInstance] ruleAtIndex:index];
 	if (index <= INT_MAX)
-		return [((BPRule *)item).alerts objectAtIndex:(NSUInteger)index];
+		return (((BPRule *)item).alerts)[(NSUInteger)index];
 	return nil;
 }
 

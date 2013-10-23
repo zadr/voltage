@@ -25,8 +25,8 @@
 #pragma mark -
 
 - (BOOL) popupAlertWithInformation:(NSDictionary *) information {
-	NSString *informativeText = [information objectForKey:@"informative-text"];
-	NSString *messageText = [information objectForKey:@"message-text"];
+	NSString *informativeText = information[@"informative-text"];
+	NSString *messageText = information[@"message-text"];
 
 	NSAlert *alert = [NSAlert alertWithMessageText:messageText defaultButton:NSLocalizedString(@"OK", @"OK button title") alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", informativeText];
 	[alert runModal];
@@ -35,7 +35,7 @@
 }
 
 - (BOOL) audioAlertWithInformation:(NSDictionary *) information {
-	NSString *audioPath = [information objectForKey:@"BPAudioPath"];
+	NSString *audioPath = information[@"BPAudioPath"];
 
 	if (![[NSFileManager defaultManager] fileExistsAtPath:audioPath])
 		return NO;
@@ -45,10 +45,10 @@
 
 	_sound = [[NSSound alloc] initWithContentsOfFile:audioPath byReference:NO];
 
-	if ([[information objectForKey:@"BPMaximumVolume"] boolValue])
+	if ([information[@"BPMaximumVolume"] boolValue])
 		_sound.volume = 1.;
 
-	if ([[information objectForKey:@"BPAudioRepeats"] boolValue])
+	if ([information[@"BPAudioRepeats"] boolValue])
 		_sound.loops = YES;
 
 	[_sound play];
@@ -63,7 +63,7 @@
 }
 
 - (BOOL) scriptAlertWithInformation:(NSDictionary *) information {
-	NSString *scriptPath = [information objectForKey:@"BPScriptPath"];
+	NSString *scriptPath = information[@"BPScriptPath"];
 
 	if (![[NSFileManager defaultManager] fileExistsAtPath:scriptPath])
 		return NO;

@@ -40,7 +40,7 @@
 
 - (void) addStatusItemStyle:(BPStatusItemStyle *) style {
 	if (![self containsStatusItemStyle:style])
-		[_statusItemStyles setObject:style forKey:style.identifier];
+		_statusItemStyles[style.identifier] = style;
 }
 
 - (void) removeStatusItemStyleWithIdentifier:(NSString *) identifier {
@@ -48,19 +48,19 @@
 }
 
 - (BOOL) containsStatusItemStyle:(BPStatusItemStyle *) style {
-	return ((BPStatusItemStyle *)[_statusItemStyles objectForKey:style.identifier]).identifier.length > 0;
+	return ((BPStatusItemStyle *)_statusItemStyles[style.identifier]).identifier.length > 0;
 }
 
 #pragma mark -
 
 - (BPStatusItemStyle *) currentStatusItemStyle {
 	NSString *currentStatusItemStyleIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:@"BPStatusItemStyle"];
-	BPStatusItemStyle *currentStatusItemStyle = [_statusItemStyles objectForKey:currentStatusItemStyleIdentifier];
+	BPStatusItemStyle *currentStatusItemStyle = _statusItemStyles[currentStatusItemStyleIdentifier];
 
 	if (currentStatusItemStyle.identifier.length)
 		return currentStatusItemStyle;
 
-	currentStatusItemStyle = [_statusItemStyles objectForKey:@"net.thisismyinter.voltageStyle.default"];
+	currentStatusItemStyle = _statusItemStyles[@"net.thisismyinter.voltageStyle.default"];
 	if (currentStatusItemStyle.identifier.length)
 		return currentStatusItemStyle;
 
