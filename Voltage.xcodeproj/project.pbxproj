@@ -12,14 +12,12 @@
 		8914CE5E127DEC54000BF0D7 /* add.tif in Resources */ = {isa = PBXBuildFile; fileRef = 8914CE5B127DEC54000BF0D7 /* add.tif */; };
 		8914CE5F127DEC54000BF0D7 /* pause.tif in Resources */ = {isa = PBXBuildFile; fileRef = 8914CE5C127DEC54000BF0D7 /* pause.tif */; };
 		8914CE60127DEC54000BF0D7 /* remove.tif in Resources */ = {isa = PBXBuildFile; fileRef = 8914CE5D127DEC54000BF0D7 /* remove.tif */; };
-		892475981089337100B1BA01 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 8924736310891C2200B1BA01 /* Growl Registration Ticket.growlRegDict */; };
 		8931D12B10EF606000ABA25A /* BPDevicePowerSources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931D12A10EF606000ABA25A /* BPDevicePowerSources.m */; };
 		893EEF3910706AD900666A37 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893EEF3810706AD900666A37 /* IOKit.framework */; };
 		893EEF7010706CE500666A37 /* net.thisismyinter.voltage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 893EEF6F10706CE500666A37 /* net.thisismyinter.voltage.plist */; };
 		894457B0120A9896005801B0 /* NSObjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 894457AF120A9896005801B0 /* NSObjectAdditions.m */; };
 		8945697B10D0E4E300CB8D59 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8945697910D0E4E200CB8D59 /* Preferences.xib */; };
 		894FB59310A407C600E2F34C /* BPAlertGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 894FB59210A407C600E2F34C /* BPAlertGenerator.m */; };
-		8957E31C1088357D00F21648 /* Growl.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8957E2D31088351500F21648 /* Growl.framework */; };
 		8982C94D127D05EB003C1E6A /* BPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8982C94C127D05EB003C1E6A /* BPCell.m */; };
 		89845E2A10E9AA48002A3055 /* BPStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89845E2910E9AA48002A3055 /* BPStatusBarController.m */; };
 		8997FC201099126100C2FCAB /* BPAlertCreationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997FC1B1099126100C2FCAB /* BPAlertCreationWindowController.m */; };
@@ -61,7 +59,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8957E31C1088357D00F21648 /* Growl.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,7 +454,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				892475981089337100B1BA01 /* Growl Registration Ticket.growlRegDict in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				893EEF7010706CE500666A37 /* net.thisismyinter.voltage.plist in Resources */,
