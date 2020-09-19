@@ -71,7 +71,7 @@
 	if (!systemUIServerPreferencesURL)
 		systemUIServerPreferencesURL = [NSURL fileURLWithPath:[[[NSFileManager defaultManager] userLibraryPath] stringByAppendingString:@"/Preferences/com.apple.systemuiserver.plist"]];
 
-	NSMutableDictionary *systemUIServerPreferences = [NSDictionary dictionaryWithContentsOfURL:systemUIServerPreferencesURL];
+	NSMutableDictionary *systemUIServerPreferences = [[NSDictionary dictionaryWithContentsOfURL:systemUIServerPreferencesURL] mutableCopy];
 	NSMutableArray *menuExtras = [systemUIServerPreferences[@"menuExtras"] mutableCopy];
 
 	return [menuExtras containsObject:batteryMenuPath];
@@ -485,7 +485,9 @@
 	if ([self statusBarTitleNeedsRefreshing])
 		[self performSelector:@selector(updateStatusBarItemForDisplay) withObject:nil afterDelay:.25];
 
-	_statusItem.title = [self titleForStatusBarItem];
+	NSString *title = self.titleForStatusBarItem;
+	if (![title isEqualToString:_statusItem.title])
+		_statusItem.title = title;
 	_statusItem.image = [self currentImageForStatusItem];
 }
 @end

@@ -68,7 +68,7 @@
 	if (![[NSFileManager defaultManager] fileExistsAtPath:scriptPath])
 		return NO;
 
-	[NSTask launchedTaskWithLaunchPath:scriptPath arguments:nil];
+	[NSTask launchedTaskWithLaunchPath:scriptPath arguments:@[]];
 
 	return YES;
 }
